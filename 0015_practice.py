@@ -7,7 +7,11 @@ def threeSum(nums):
 			indices[nums[i]].append(i)
 		else:
 			indices[nums[i]] = [i]
-	print(indices)
+
+	for i in range(len(nums)):
+		for j in range(i+1, len(nums)):
+			third_value = -1 * (nums[i] + nums[j])
+			print(i,j,indices[third_value])
 	pass
 
 print(threeSum([]))
