@@ -6,16 +6,19 @@ def threeSum(nums):
 	nums_compressed = []
 	counter = 0
 	for i in range(len(nums)):
-		if nums[i] in values and len(values[nums[i]]) < 3:
-			values[nums[i]].append(counter)
-			counter += 1
+		if nums[i] in values:
+			if len(values[nums[i]]) < 3:
+				values[nums[i]].append(counter)
+				nums_compressed.append(nums[i])
+				counter += 1
 		else:
-			values[nums[i]] = counter
+			values[nums[i]] = [counter]
 			nums_compressed.append(nums[i])
 			counter += 1
-	print(values)
-	print(nums_compressed)
+	#print(values)
+	#print(nums_compressed)
 
+	'''
 	lists = []
 	for i in range(len(nums_compressed)):
 		for j in range(i+1, len(nums_compressed)):
@@ -26,7 +29,7 @@ def threeSum(nums):
 					new_list = [nums_compressed[i],nums_compressed[j],third_value]
 					new_list.sort()
 					lists.append(new_list)
-	return lists
+	return lists'''
 	'''
 	indices = {}
 	for i in range(len(nums)):
@@ -52,6 +55,7 @@ def threeSum(nums):
 	'''
 print(threeSum([]))
 print(threeSum([-1,0,1,2,-1,-4]))
+print(threeSum([0,0,0,0,0,0,0,0,0,0,0,0,0]))
 
 # First iteration: too slow
 # Duplicate values can be preprocessed by making a dictionary instead
