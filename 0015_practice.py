@@ -1,6 +1,21 @@
 def threeSum(nums):
 	if len(nums) < 3:
 		return []
+
+	values = {}
+	nums_compressed = []
+	counter = 0
+	for i in range(len(nums)):
+		if nums[i] in values:
+			continue
+		else:
+			values(nums[i]) = counter
+			nums_compressed.append(nums[i])
+			counter += 1
+	print(values)
+	print(nums_compressed)
+
+	'''
 	indices = {}
 	for i in range(len(nums)):
 		if nums[i] in indices:
@@ -22,7 +37,7 @@ def threeSum(nums):
 					else:
 						lists.append(new_list)
 	return lists
-
+	'''
 print(threeSum([]))
 print(threeSum([-1,0,1,2,-1,-4]))
 
