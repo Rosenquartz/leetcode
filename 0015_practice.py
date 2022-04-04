@@ -18,18 +18,18 @@ def threeSum(nums):
 	#print(values)
 	#print(nums_compressed)
 
-	'''
+	
 	lists = []
 	for i in range(len(nums_compressed)):
 		for j in range(i+1, len(nums_compressed)):
 			third_value = -1 * (nums_compressed[i] + nums_compressed[j])
-			print(i,j,third_value)
+			#print(i,j,third_value)
 			if third_value in values:
-				if values[third_value] > j:
+				if max(values[third_value]) > j:
 					new_list = [nums_compressed[i],nums_compressed[j],third_value]
 					new_list.sort()
 					lists.append(new_list)
-	return lists'''
+	return lists
 	'''
 	indices = {}
 	for i in range(len(nums)):
