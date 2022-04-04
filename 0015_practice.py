@@ -28,7 +28,8 @@ def threeSum(nums):
 				if max(values[third_value]) > j:
 					new_list = [nums_compressed[i],nums_compressed[j],third_value]
 					new_list.sort()
-					lists.append(new_list)
+					if new_list not in lists:
+						lists.append(new_list)
 	return lists
 	'''
 	indices = {}
